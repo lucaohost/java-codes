@@ -1,0 +1,2 @@
+Exercício 4: . O que é e como funciona o método merge()?
+Ele tem a função de persistir o dado quando chamado, da mesma forma que ocorre com o método persist. A diferença é que o método merge() é utilizado com objetos no estado Detached, já o persisit com objetos no estado new. Outro ponto, é que ao utilizar o método merge, passando um objeto em estado Detached, é retornado um objeto Managed.

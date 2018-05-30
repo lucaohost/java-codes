@@ -1,0 +1,3 @@
+Exercício 2:  Cite duas formas de recuperar dados do banco usando JPA.
+
+Utilizado o createQuery() ou find() da EntityManger.

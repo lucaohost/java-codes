@@ -1,0 +1,6 @@
+Exercício 3: . Quais são os estados de uma entidade? Explique a transição de um para o outro.
+
+Existem três estados de um objeto no JPA. A primeria dela é a NEW, que é quando o objeto é criado, e o mesmo não possui uma representação no banco de dados. A segunda
+acontece quando esse dado é persistido, então o mesmo assume o estado de Managed. Qualquer alteraçao no objeto nesse estado dará uma ordem de sincronização no banco de
+dado, porém isso não é instantâneo, pois só acontece no flush time, que é definido na implementação do hibernate. Normalmente o objeto fica pouco tempo no estado de 
+Managed, e depois do tempo definido, ele passa para o estado Detached. Nesse estado o objeto já foi persisitido, e alterações feitas nesse estado não causarão impactos nos dados já persistidos.
