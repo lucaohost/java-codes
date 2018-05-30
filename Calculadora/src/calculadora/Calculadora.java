@@ -60,6 +60,7 @@ public class Calculadora {
                 //excluir o segundo termo 
                 calculo.remove(i);
                 //(não é i+1, pq a fila diminui pela exclusão acima)
+                i = 0;
             }
         }
         //faz calculo divisão
@@ -71,6 +72,7 @@ public class Calculadora {
                 calculo.set(i, Integer.toString(resultado));
                 calculo.remove(i - 1);
                 calculo.remove(i);
+                i = 0;
             }
         }
         //faz calculo adição e subtração
