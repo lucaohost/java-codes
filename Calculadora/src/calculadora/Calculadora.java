@@ -25,8 +25,7 @@ public class Calculadora {
         operadores.add('-');
         operadores.add('/');
         operadores.add('*');
-        
-        
+
         String calculoString = "+11+22-33+44*55*66-99-66/2+45-12";
 
         //seprara numero e operadores
@@ -70,9 +69,7 @@ public class Calculadora {
                 //zera para varrer os valores que regrediram de indice
                 i = 0;
             }
-        }
-        //faz calculo divisão
-        for (int i = 0; i < calculo.size(); i++) {
+            //mesma lógica, só que dividindo
             if (calculo.get(i).equals("/")) {
                 int n1 = Integer.parseInt(calculo.get(i - 1));
                 int n2 = Integer.parseInt(calculo.get(i + 1));
@@ -83,24 +80,27 @@ public class Calculadora {
                 i = 0;
             }
         }
+
         //faz calculo adição e subtração
         for (int i = 0; i < calculo.size(); i++) {
             if (calculo.get(i).equals("+")) {
                 //remove sinal positivo à direita
-                if(i == 0){
+                if (i == 0) {
                     calculo.remove(i);
-                }else{
-                int n1 = Integer.parseInt(calculo.get(i - 1));
-                int n2 = Integer.parseInt(calculo.get(i + 1));
-                int resultado = n1 + n2;
-                calculo.set(i, Integer.toString(resultado));
-                calculo.remove(i - 1);
-                calculo.remove(i);
-                //reinicia iterator para buscar mais adições/subtrações
-                i = 0;
+                } else {
+                    //mesma lógica acima
+                    int n1 = Integer.parseInt(calculo.get(i - 1));
+                    int n2 = Integer.parseInt(calculo.get(i + 1));
+                    int resultado = n1 + n2;
+                    calculo.set(i, Integer.toString(resultado));
+                    calculo.remove(i - 1);
+                    calculo.remove(i);
+                    i = 0;
                 }
             }
             if (calculo.get(i).equals("-")) {
+                //joga algarismo negativo para o fim
+                //para sempre operar em trio (numero-operador-numero)
                 if (i == 0) {
                     calculo.add("-");
                     calculo.add(calculo.get(i + 1));
@@ -112,17 +112,17 @@ public class Calculadora {
                     }
                     i = 0;
                 } else {
+//                    mesa lógica acima
                     int n1 = Integer.parseInt(calculo.get(i - 1));
                     int n2 = Integer.parseInt(calculo.get(i + 1));
                     int resultado = n1 - n2;
                     calculo.set(i, Integer.toString(resultado));
                     calculo.remove(i - 1);
                     calculo.remove(i);
-                    //reinicia iterator para buscar mais adições/subtrações
                     i = 0;
                 }
             }
         }
-            System.out.println(calculo.get(0));
+        System.out.println(calculo.get(0));
     }
 }
