@@ -112,7 +112,7 @@ public class Calculadora {
                     }
                     i = 0;
                 } else {
-//                    mesa lógica acima
+//                    mesma lógica acima
                     int n1 = Integer.parseInt(calculo.get(i - 1));
                     int n2 = Integer.parseInt(calculo.get(i + 1));
                     int resultado = n1 - n2;
