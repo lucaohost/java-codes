@@ -8,7 +8,16 @@
 <c:import url="inc/cabecalho.inc.jsp">
     <c:param name="pageName" value="Listagem" />
 </c:import>
-
+<%
+if (request.getSession().getAttribute("idSession") == null) {
+        String mensagem = "<div class='alert alert-warning'>"
+                + "Área restrita para usuários. Por favor insira suas credenciais."
+                + "</div>";
+        request.setAttribute("mensagem", mensagem);
+        RequestDispatcher view = request.getRequestDispatcher("login.jsp");
+        view.forward(request, response);
+    }
+%>
 <!-- Conteúdo da Página -->
 <div class="container">
     <div class="panel panel-default">
@@ -59,7 +68,7 @@
     </div>
 </div>    
 <script>
-    if(document.getElementById("pesquisou").value != 'S'){
+    if (document.getElementById("pesquisou").value != 'S') {
         document.getElementById("pesquisar").click();
     }
     function excluir(id) {

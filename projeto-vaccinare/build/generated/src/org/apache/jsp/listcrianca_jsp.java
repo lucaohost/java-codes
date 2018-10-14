@@ -124,7 +124,7 @@ public final class listcrianca_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("</div>    \n");
       out.write("<script>\n");
-      out.write("    if(document.getElementById(\"pesquisou\").value != 'S'){\n");
+      out.write("    if (document.getElementById(\"pesquisou\").value != 'S') {\n");
       out.write("        document.getElementById(\"pesquisar\").click();\n");
       out.write("    }\n");
       out.write("    function excluir(id) {\n");

@@ -3,6 +3,7 @@
   <persistence-unit name="vaccinarePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>br.ifrs.vaccinare.dao.CriancaDAO</class>
+    <class>br.ifrs.vaccinare.dao.UsuarioDAO</class>
     <validation-mode>NONE</validation-mode>
     <properties>
       <!-- Propriedades JDBC -->

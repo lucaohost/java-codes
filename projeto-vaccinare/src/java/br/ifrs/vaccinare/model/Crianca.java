@@ -14,7 +14,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author mauricio.rosito
+ * @author lucaxrl
  */
 @Entity
 public class Crianca implements Serializable {
@@ -27,8 +27,58 @@ public class Crianca implements Serializable {
     private String nome;
     @Column(nullable=false,precision=3) 
     private int idade;
-     @Column(nullable=false,length=100) 
+     @Column(nullable=false,length=1) 
     private char sexo;
+     @Column(nullable=false,length=1) 
+    private char etnia;
+     @Column(nullable=false) 
+    private boolean partoNatural;
+    @Column(nullable=false, length=100) 
+    private String nomeMae;
+    @Column(nullable=false, length=100) 
+    private String email;
+    @Column(nullable=false, length=100) 
+    private String telefone;
+
+    public boolean isPartoNatural() {
+        return partoNatural;
+    }
+
+    public void setPartoNatural(boolean partoNatural) {
+        this.partoNatural = partoNatural;
+    }
+
+    public String getNomeMae() {
+        return nomeMae;
+    }
+
+    public void setNomeMae(String nomeMae) {
+        this.nomeMae = nomeMae;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public char getEtnia() {
+        return etnia;
+    }
+
+    public void setEtnia(char etnia) {
+        this.etnia = etnia;
+    }
 
     public char getSexo() {
         return sexo;
@@ -86,7 +136,8 @@ public class Crianca implements Serializable {
 
     @Override
     public String toString() {
-        return "Crianca{" + "id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + '}';
+        return "Crianca{" + "id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", etnia=" + etnia + ", partoNatural=" + partoNatural + ", nomeMae=" + nomeMae + ", email=" + email + ", telefone=" + telefone + '}';
     }
-   
+
+
 }

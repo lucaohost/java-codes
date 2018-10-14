@@ -46,6 +46,9 @@
             </form>
         </div>
     </div>
+    <div>
+        ${mensagem}
+    </div>
 </div>
 <!-- Rodapé da Página -->
 <jsp:include page="inc/rodape.inc.jsp" />

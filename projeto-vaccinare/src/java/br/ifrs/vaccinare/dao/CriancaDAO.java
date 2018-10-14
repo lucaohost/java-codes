@@ -48,5 +48,21 @@ public class CriancaDAO {
         this.em.close();
         return criancas.get(0);
     }
+     
+    public void atualizar(Crianca crianca, long id) throws Exception {
+        this.em = EntityManagerProvider.getInstance();
+        this.em.getTransaction().begin();
+        Crianca oldKid = (Crianca)this.em.find(Crianca.class ,id);
+        oldKid.setIdade(crianca.getIdade());
+        oldKid.setEmail(crianca.getEmail());
+        oldKid.setEtnia(crianca.getEtnia());
+        oldKid.setNome(crianca.getNome());
+        oldKid.setNomeMae(crianca.getNomeMae());
+        oldKid.setPartoNatural(crianca.isPartoNatural());
+        oldKid.setSexo(crianca.getSexo());
+        oldKid.setTelefone(crianca.getTelefone());
+        this.em.getTransaction().commit();
+        this.em.close();
+    }
   
 }
