@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>br.ifrs.vaccinare.dao.CriancaDAO</class>
     <class>br.ifrs.vaccinare.dao.UsuarioDAO</class>
+    <class>br.ifrs.vaccinare.dao.VacinacaoDAO</class>
     <validation-mode>NONE</validation-mode>
     <properties>
       <!-- Propriedades JDBC -->

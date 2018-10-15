@@ -38,10 +38,16 @@
                                 <a class="nav-link" href="home.jsp">Home <%= (pageName.equalsIgnoreCase("Home")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
                             </li>
                             <li class="nav-item <%= (pageName.equalsIgnoreCase("Listagem")) ? "active" : ""%>">
-                                <a class="nav-link" href="listcrianca.jsp">Listagem <%= (pageName.equalsIgnoreCase("Listagem")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
+                                <a class="nav-link" href="listcrianca.jsp">Listagem Crianças<%= (pageName.equalsIgnoreCase("Listagem")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
                             </li>
                             <li class="nav-item <%= (pageName.equalsIgnoreCase("Cadastro")) ? "active" : ""%>">
-                                <a class="nav-link" href="cadcrianca.jsp">Cadastro <%= (pageName.equalsIgnoreCase("Cadastro")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
+                                <a class="nav-link" href="cadcrianca.jsp">Cadastro Crianças<%= (pageName.equalsIgnoreCase("Cadastro")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
+                            </li>
+                            <li class="nav-item <%= (pageName.equalsIgnoreCase("CadastroVacina")) ? "active" : ""%>">
+                                <a class="nav-link" href="CriancaController?acao=listCriancas">Nova Vacinação<%= (pageName.equalsIgnoreCase("CadastroVacina")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
+                            </li>
+                            <li class="nav-item <%= (pageName.equalsIgnoreCase("Vacinacoes")) ? "active" : ""%>">
+                                <a class="nav-link" href="listvacina.jsp">Vacinações <%= (pageName.equalsIgnoreCase("Vacinacoes")) ? "<span class='sr-only'>(current)</span>" : ""%></a>
                             </li>                
                             <li class="nav-item <%= (pageName.equalsIgnoreCase("Sair")) ? "active" : ""%>">
                                 <a class="nav-link" href="UsuarioController?logout=logout">Sair <%= (pageName.equalsIgnoreCase("Sair")) ? "<span class='sr-only'>(current)</span>" : ""%></a>

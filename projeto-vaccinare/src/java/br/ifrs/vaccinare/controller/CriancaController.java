@@ -26,6 +26,7 @@ public class CriancaController extends HttpServlet {
 
     private static String CADASTRO = "/cadcrianca.jsp";
     private static String LISTAGEM = "/listcrianca.jsp";
+    private static String CADASTROVACINA = "/cadvacina.jsp";
     private static String ERRO = "/erro.jsp";
     private static String EDICAO = "/cadcrianca.jsp";
     private static String LOGIN = "/login.jsp";
@@ -43,10 +44,10 @@ public class CriancaController extends HttpServlet {
 
         String forward = "";
         try {
-            Long idCrianca = Long.parseLong(request.getParameter("id"));
             String acao = request.getParameter("acao").toLowerCase();
 
             if (acao.equalsIgnoreCase("excluir")) {
+                Long idCrianca = Long.parseLong(request.getParameter("id"));
                 this.dao.excluir(idCrianca);
                 forward = LISTAGEM;
                 String mensagem = "<div class='alert alert-success'>"
@@ -57,12 +58,18 @@ public class CriancaController extends HttpServlet {
             }
 
             if (acao.equalsIgnoreCase("abriredicao")) {
+                Long idCrianca = Long.parseLong(request.getParameter("id"));
                 Crianca crianca = this.dao.pesquisarPorId(idCrianca);
                 forward = EDICAO;
                 request.setAttribute("crianca", crianca);
                 // problemas com validação de true e false no js
                 char parto = crianca.isPartoNatural() ? 'S' : 'N';
                 request.setAttribute("parto", parto);
+            }
+
+            if (acao.equalsIgnoreCase("listCriancas")) {
+                forward = CADASTROVACINA;
+                this.listarCriancas(request, "");
             }
         } catch (Exception ex) {
             forward = ERRO;
@@ -108,7 +115,7 @@ public class CriancaController extends HttpServlet {
                     request.setAttribute("mensagem", mensagem);
                 } else {
                     long id = Long.parseLong(request.getParameter("id"));
-                    this.dao.atualizar(crianca,id);
+                    this.dao.atualizar(crianca, id);
                     mensagem = "<div class='alert alert-success'>"
                             + "<strong>Sucesso!</strong> Criança Atualizada com sucesso!"
                             + "</div>";
@@ -126,10 +133,10 @@ public class CriancaController extends HttpServlet {
         }
     }
 
-    public void listarCriancas(HttpServletRequest request, String pesquisa) throws Exception{
-          List<Crianca> criancas = this.dao.pesquisar(pesquisa);
-          request.setAttribute("criancas", criancas);
-          String pesquisou = "S";
-          request.setAttribute("pesquisou", pesquisou);
+    public void listarCriancas(HttpServletRequest request, String pesquisa) throws Exception {
+        List<Crianca> criancas = this.dao.pesquisar(pesquisa);
+        request.setAttribute("criancas", criancas);
+        String pesquisou = "S";
+        request.setAttribute("pesquisou", pesquisou);
     }
 }

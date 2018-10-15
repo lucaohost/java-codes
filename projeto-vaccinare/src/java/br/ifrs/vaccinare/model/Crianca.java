@@ -23,21 +23,21 @@ public class Crianca implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(nullable=false, length=100) 
+    @Column(nullable = false, length = 100)
     private String nome;
-    @Column(nullable=false,precision=3) 
+    @Column(nullable = false, precision = 3)
     private int idade;
-     @Column(nullable=false,length=1) 
+    @Column(nullable = false, length = 1)
     private char sexo;
-     @Column(nullable=false,length=1) 
+    @Column(nullable = false, length = 1)
     private char etnia;
-     @Column(nullable=false) 
+    @Column(nullable = false)
     private boolean partoNatural;
-    @Column(nullable=false, length=100) 
+    @Column(nullable = false, length = 100)
     private String nomeMae;
-    @Column(nullable=false, length=100) 
+    @Column(nullable = false, length = 100)
     private String email;
-    @Column(nullable=false, length=100) 
+    @Column(nullable = false, length = 100)
     private String telefone;
 
     public boolean isPartoNatural() {
@@ -87,7 +87,7 @@ public class Crianca implements Serializable {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -103,8 +103,7 @@ public class Crianca implements Serializable {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -113,7 +112,6 @@ public class Crianca implements Serializable {
         this.id = id;
     }
 
-   
     @Override
     public int hashCode() {
         int hash = 0;
@@ -138,6 +136,5 @@ public class Crianca implements Serializable {
     public String toString() {
         return "Crianca{" + "id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", etnia=" + etnia + ", partoNatural=" + partoNatural + ", nomeMae=" + nomeMae + ", email=" + email + ", telefone=" + telefone + '}';
     }
-
 
 }

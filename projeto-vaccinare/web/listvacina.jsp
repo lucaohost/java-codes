@@ -6,7 +6,7 @@
 <!-- include_once './inc/acesso.inc.php'; -->
 <!-- Cabeçalho da Página -->
 <c:import url="inc/cabecalho.inc.jsp">
-    <c:param name="pageName" value="Listagem" />
+    <c:param name="pageName" value="Vacinacoes" />
 </c:import>
 <%
 if (request.getSession().getAttribute("idSession") == null) {
@@ -22,13 +22,13 @@ if (request.getSession().getAttribute("idSession") == null) {
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title text-center">Gestão de Crianças</h2>
+            <h2 class="panel-title text-center">Gestão de Vacinas</h2>
         </div>
         <div class="panel-body">
             <!-- Mensagens vindas dos Controllers -->
             <c:out value="${mensagem}" escapeXml="false"/>
             <!-- Formulário de pesquisa -->
-            <form action="CriancaController" method="post" class="form-horizontal">
+            <form action="VacinacaoController" method="post" class="form-horizontal">
                 <div class="input-group">
                     <input class="form-control border-secondary py-2" type="search" id="nome_pesquisa" name="nome_pesquisa" placeholder="Pesquisar...">
                     <input class="form-control border-secondary py-2" type="hidden" id="pesquisou" name="pesquisou" value="${pesquisou}">
@@ -46,21 +46,28 @@ if (request.getSession().getAttribute("idSession") == null) {
                     <tr>
                         <th>Nome</th>
                         <th>Sexo</th>
-                        <th>Idade</th>
+                        <th>Última Vacina</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <c:forEach var="crianca" items="${criancas}">
+                    <c:forEach var="vacina" items="${vacinas}">
                         <tr>
-                            <td>${crianca.nome}</td>
-                            <td width='15%'>${crianca.sexo}</td>
-                            <td width='15%'>${crianca.idade} anos</td>
-                            <td width='15%'><a class='text-dark' href='CriancaController?acao=abrirEdicao&id=${crianca.id}'><i class='fa fa-edit'> </i>Alterar</a> | <a class='text-dark' href='#' onclick='excluir(${crianca.id});'><i class='fa fa-trash' ></i>Excluir</a></td>
+                            <td>${vacina.crianca.nome}</td>
+                            <td width='15%'>${vacina.crianca.sexo}</td>
+                            <td width='15%' class="dataVacinacao">${vacina.dataVacinacao}</td>
+                            <td width='15%'><a class='text-dark' href='VacinacaoController?idCrianca=${vacina.crianca.id}'><i class='fa fa-edit'> </i>Detalhes</a></td>
                         </tr>                            
                     </c:forEach>
-
+                <script>
+                    //formata datas
+                    var obj = document.getElementsByClassName("dataVacinacao");
+                    for (var prop in obj) {
+                      var data = new Date(obj[prop].innerHTML + " 00:00:00");
+                      obj[prop].innerHTML = data.toLocaleDateString('en-GB');  
+                    }
+                </script>
                 </tbody>
             </table>                    
 

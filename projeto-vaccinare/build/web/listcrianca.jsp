@@ -41,7 +41,7 @@ if (request.getSession().getAttribute("idSession") == null) {
                 <br>
             </form>
             <!-- Listagem -->
-            <table class="table table-striped table-bordered table-condensed table-hover">
+            <table class="table table-striped table-bordered table-condensed table-hover text-center">
                 <thead class="thead-dark text-center">
                     <tr>
                         <th>Nome</th>

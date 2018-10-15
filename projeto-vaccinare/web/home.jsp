@@ -23,11 +23,15 @@ if (request.getSession().getAttribute("idSession") == null) {
     <div class="panel panel-default">
         <div class="alert alert-secondary mt-3">
             <h2 class="text-center mb-5">Sistema Vaccinare para Gestão de Vacinações</h2>
-            <p>O Sistema dispõe das seguintes funcionalidade: </p>
+            <p>O Sistema dispõe das seguintes funcionalidades: </p>
             <ul>
-                <li><b>Listagem</b> com motor de busca habilitado par buscar por nomes de crianças, bem como partes de seus nomes também;</li>
-                <li><b>Cadastro</b> de crianças contendo Nome, Sexo, Etnia, Idade, Parto Natural, Email e Nome da Mãe;</li>
-                <li><b>Gestão de Vacinas</b> para salvar vacinações realizadas contendo Crianças, Vacina.</li>
+                <li><b>Listagem Crianças</b> com motor de busca habilitado par buscar por nomes de crianças, bem como partes de seus nomes também;</li>
+                <li><b>Cadastro Crianças</b> de crianças contendo Nome, Sexo, Etnia, Idade, Parto Natural, Email e Nome da Mãe;</li>
+                <li><b>Alterar Cadastro Crianças</b> para visualizar e alterar detalhes de uma Crianças Cadastrada;</li>
+                <li><b>Nova Vacinação</b> para salvar vacinações realizadas contendo Crianças, Vacina, Lote e Data.</li>
+                <li><b>Vacinações</b> para visualizar todos os nome das Crianças que já foram vacinadas, bem como Sexo e Última Vacina.</li>
+                <li><b>Detalhes em Vacinações</b> para visualizar todas as vacinações de uma determinada criança.</li>
+                <li><b>Sair</b> para deslogar de suas conta.</li>
             </ul>
             <img class="mt-4 rounded mb-4" style="margin-left:28%" src="inc/Vaccinazione.jpg">
             <p><b>Suporte:</b> suporte@vaccinare.com.br</p>
