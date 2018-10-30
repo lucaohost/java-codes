@@ -71,7 +71,17 @@ public final class listcrianca_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!-- Cabeçalho da Página -->\n");
       if (_jspx_meth_c_import_0(_jspx_page_context))
         return;
-      out.write("\n");
+      out.write('\n');
+
+if (request.getSession().getAttribute("idSession") == null) {
+        String mensagem = "<div class='alert alert-warning'>"
+                + "Área restrita para usuários. Por favor insira suas credenciais."
+                + "</div>";
+        request.setAttribute("mensagem", mensagem);
+        RequestDispatcher view = request.getRequestDispatcher("login.jsp");
+        view.forward(request, response);
+    }
+
       out.write("\n");
       out.write("<!-- Conteúdo da Página -->\n");
       out.write("<div class=\"container\">\n");
@@ -101,7 +111,7 @@ public final class listcrianca_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <br>\n");
       out.write("            </form>\n");
       out.write("            <!-- Listagem -->\n");
-      out.write("            <table class=\"table table-striped table-bordered table-condensed table-hover\">\n");
+      out.write("            <table class=\"table table-striped table-bordered table-condensed table-hover text-center\">\n");
       out.write("                <thead class=\"thead-dark text-center\">\n");
       out.write("                    <tr>\n");
       out.write("                        <th>Nome</th>\n");
