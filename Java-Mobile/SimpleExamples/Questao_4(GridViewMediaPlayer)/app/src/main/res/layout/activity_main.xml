@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:columnCount="3"
+    android:rowCount="3"
+    tools:context="com.limagmail.de.reginatto.lucas.questao_4gridviewmediaplayer.MainActivity">
+    <ImageView
+        android:id="@+id/brasil"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_margin="10dp"
+        android:layout_gravity="left"
+        android:src="@drawable/pais1"/>
+    <ImageView
+        android:id="@+id/uruguai"
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        android:src="@drawable/pais2"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="right"
+        android:src="@drawable/pais3"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="left"
+        android:src="@drawable/pais4"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        android:src="@drawable/pais5"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="right"
+        android:src="@drawable/pais6"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="left"
+        android:src="@drawable/pais7"/>
+    <ImageView
+        android:layout_width="300px"
+        android:layout_margin="10dp"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        android:src="@drawable/pais8"/>
+    <TextView android:id="@+id/resultado"/>
+
+</GridLayout>
