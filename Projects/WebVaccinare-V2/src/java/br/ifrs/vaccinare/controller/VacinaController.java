@@ -1,7 +1,7 @@
 package br.ifrs.vaccinare.controller;
 
 import br.ifrs.vaccinare.dao.VacinaDAO;
-import static br.ifrs.vaccinare.model.CriancaVacina_.vacina;
+import br.ifrs.vaccinare.model.CriancaVacina;
 import br.ifrs.vaccinare.model.ServerResponse;
 import br.ifrs.vaccinare.model.Vacina;
 import com.google.gson.Gson;
